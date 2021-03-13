@@ -1,0 +1,29 @@
+{
+  "name": "celmail",
+  "version": "1.0.0",
+  "description": "cOpen source email service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celmail/celmail.git"
+  },
+  "keywords": [
+    "mail",
+    "server",
+    "service",
+    "email"
+  ],
+  "author": "john bahamon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celmail/celmail/issues"
+  },
+  "homepage": "https://github.com/celmail/celmail#readme",
+  "dependencies": {
+    "mailparser": "^3.1.0",
+    "smtp-server": "^3.8.0"
+  }
+}
