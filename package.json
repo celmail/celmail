@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/celmail/celmail#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mailparser": "^3.1.0",
     "smtp-server": "^3.8.0"
   }
