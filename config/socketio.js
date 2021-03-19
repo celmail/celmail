@@ -1,4 +1,4 @@
-const configureChat = require('../server/controllers/chatcontroller');
+const configureChat = require('../server/controllers/chat.controller');
 
 module.exports = function(server, io) {
   io.on('connection', (socket) => {

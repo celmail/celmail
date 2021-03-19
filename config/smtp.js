@@ -1,15 +1,19 @@
-/* const SMTPServer = require("smtp-server").SMTPServer;
+const SMTPServer = require("smtp-server").SMTPServer;
 const parser = require("mailparser").simpleParser;
+
+module.exports = function() {
     const server = new SMTPServer({
-    onData(stream, session, callback) {
-      parser(stream, {}, (err, parsed) => {
-        if (err)
-          console.log("Error:" , err)
-        
-        console.log(parsed)
-        stream.on("end", callback)
-      })
-    },
-    disabledCommands: ['AUTH']
+        onData(stream, session, callback) {
+          parser(stream, {}, (err, parsed) => {
+            if (err)
+              console.log("Error:" , err)
+            
+            console.log(parsed)
+            stream.on("end", callback)
+          })
+        },
+        disabledCommands: ['AUTH']
     });
-    server.listen(25, "35.184.65.98")  */
+    server.listen(process.env.PORT_MAIL, process.env.INTERNAL_IP)
+};
+
