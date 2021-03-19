@@ -1,19 +1,15 @@
-const SMTPServer = require("smtp-server").SMTPServer;
-const parser = require("mailparser").simpleParser;
+require('dotenv').config();  
+const configureMongoose = require('./config/mongoclient');
+const configureExpress = require('./config/express');
+//const configurePassport = require('./config/passport');
 
-
-    const server = new SMTPServer({
-    onData(stream, session, callback) {
-      parser(stream, {}, (err, parsed) => {
-        if (err)
-          console.log("Error:" , err)
-        
-        console.log(parsed)
-        stream.on("end", callback)
-      })
-      
-    },
-    disabledCommands: ['AUTH']
-    });
+if (process.env.NODE_ENV !== 'production') {
   
-    server.listen(25, "35.184.65.98") 
+}
+const db = configureMongoose();
+const app = configureExpress();
+//const passport = configurePassport();
+
+app.listen(process.env.PORT);
+
+module.exports = app;
