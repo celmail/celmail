@@ -1,8 +1,0 @@
-Subject: Terminal Email Send
-
-Email Content line 1
-Email Content line 2martha.tierradentroa@hotmail.com
-
-To: datos@192.168.20.29
-From: user@192.168.20.29
-Subject: Test Send Mail
