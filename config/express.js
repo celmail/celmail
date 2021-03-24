@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
@@ -17,7 +18,13 @@ module.exports = function() {
 
 	// Load the routing files
 
+	app.use(express.static('dist/celmail'))
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, './../index.html'));
+	});
 	
+
+
 	configureSocket(server, io);
 
 	// Return the Express application instance
